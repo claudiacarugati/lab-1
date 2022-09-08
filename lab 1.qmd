@@ -1,0 +1,52 @@
+---
+title: "lab 1"
+author: "Claudia Carugati"
+format: pdf
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+library(tidyverse)
+library(viridis)
+```
+
+```{r}
+glimpse(midwest)
+```
+
+```{r}
+view(midwest)
+```
+
+1.  Making a histogram to visualize the population density of counties
+
+```{r}
+ggplot(midwest, aes(x = popdensity))+
+  geom_histogram(binwidth = 10000, fill = "light blue")+
+labs(title = "population density in different counties", x = "population density", y = "frequency")
+```
+
+The distribution has a right skewed tail.
+
+There seems to be a few counties with an extremely high population density at around 60000 and 90000. These are outliers, they are far away from most of the data and outside of the curve.
