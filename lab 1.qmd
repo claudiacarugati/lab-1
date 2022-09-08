@@ -7,24 +7,7 @@ editor: visual
 
 ## Quarto
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
 ## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
 
 ```{r}
 library(tidyverse)
@@ -82,8 +65,6 @@ There seems to be a few counties with an extremely high population density at ar
       geom_boxplot()
     ```
 
-6.  
-
 -   Describe what you observe from the plot.
 
 -   Which state has the single largest county? How do you know based on the plot?
@@ -100,3 +81,12 @@ midwest <- midwest |>
 ggplot(midwest, aes(x=state, fill= metro))+
   geom_bar()
 ```
+7. recreating a plot 
+
+```{r}
+    ggplot(midwest, aes(x=percollege, y=popdensity, color=percbelowpoverty))+
+      geom_point(size=2, alpha=0.5)+
+       facet_wrap(~state) +
+      labs(title="Do people with college degrees tend to live in denser areas?", x= "% college educated", y= "population density (person/unit area)", fill= "% below \n poeverty line")
+    ```
+
