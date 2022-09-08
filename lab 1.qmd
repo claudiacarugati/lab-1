@@ -58,3 +58,20 @@ There seems to be a few counties with an extremely high population density at ar
       geom_point()+
       labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
     ```
+
+```{=html}
+<!-- -->
+```
+3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
+
+4.  exercise title
+
+    ```{r}
+    ggplot(midwest, aes(x=percollege, y=percbelowpoverty, color=state))+
+      geom_point(alpha = .5)+
+      facet_wrap(~state) +
+      geom_smooth(se = FALSE, color = "black")+
+      labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
+    ```
+
+    Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
