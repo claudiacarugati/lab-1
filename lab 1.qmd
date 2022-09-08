@@ -27,7 +27,7 @@ view(midwest)
 ```{r}
 ggplot(midwest, aes(x = popdensity))+
   geom_histogram(binwidth = 10000, fill = "light blue")+
-labs(title = "population density in different counties", x = "population density", y = "frequency")
+labs(title = "Population density in different counties", x = "Population density", y = "Frequency")
 ```
 
 The distribution has a right skewed tail.
@@ -42,23 +42,20 @@ There seems to be a few counties with an extremely high population density at ar
       labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
     ```
 
-<!-- -->
-
 3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
 
-4.  exercise title
+4.  Looking at the relationship between the number of poeple with a college degree and the number of poeple below the poverty line by state. 
 
     ```{r}
     ggplot(midwest, aes(x=percollege, y=percbelowpoverty, color=state))+
       geom_point(alpha = .5)+
       facet_wrap(~state) +
       geom_smooth(se = FALSE, color = "black")+
-      labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
+      labs(title="% people with college degree vs % people below poverty line", x= "% of people with a college degree", y= "% of people below poverty line") + scale_colour_viridis_d()
     ```
+Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
 
-    Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
-
-5.  doing something? - add title
+5.  Looking at the difference in area between states.
 
     ```{r}
     ggplot(midwest, aes(x=area, y=state))+
@@ -69,7 +66,7 @@ There seems to be a few counties with an extremely high population density at ar
 
 -   Which state has the single largest county? How do you know based on the plot?
 
-6.  plotting something ? - add title
+6.  Exploring whether most counties in the chosen states are located in a metropolitan area or not
 
 ```{r}
 midwest <- midwest |>
@@ -79,14 +76,15 @@ midwest <- midwest |>
 
 ```{r}
 ggplot(midwest, aes(x=state, fill= metro))+
-  geom_bar()
+  geom_bar()+
+  labs(fill= "Is it \n located in a \n metropolitan \n area?")
 ```
-7. recreating a plot 
+7. Looking at whether people with a college degree tend to live in denser areas 
 
 ```{r}
     ggplot(midwest, aes(x=percollege, y=popdensity, color=percbelowpoverty))+
       geom_point(size=2, alpha=0.5)+
        facet_wrap(~state) +
-      labs(title="Do people with college degrees tend to live in denser areas?", x= "% college educated", y= "population density (person/unit area)", fill= "% below \n poeverty line")
+      labs(title="Do people with college degrees tend to live in denser areas?", x= "% college educated", y= "Population density (person/unit area)", color = "% below \n poeverty line")
     ```
 
