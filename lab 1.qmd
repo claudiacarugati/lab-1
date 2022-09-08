@@ -59,9 +59,8 @@ There seems to be a few counties with an extremely high population density at ar
       labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
     ```
 
-```{=html}
 <!-- -->
-```
+
 3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
 
 4.  exercise title
@@ -75,3 +74,29 @@ There seems to be a few counties with an extremely high population density at ar
     ```
 
     Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
+
+5.  doing something? - add title
+
+    ```{r}
+    ggplot(midwest, aes(x=area, y=state))+
+      geom_boxplot()
+    ```
+
+6.  
+
+-   Describe what you observe from the plot.
+
+-   Which state has the single largest county? How do you know based on the plot?
+
+6.  plotting something ? - add title
+
+```{r}
+midwest <- midwest |>
+  mutate(metro = if_else(inmetro == 1, "Yes", "No"))
+```
+
+
+```{r}
+ggplot(midwest, aes(x=state, fill= metro))+
+  geom_bar()
+```
