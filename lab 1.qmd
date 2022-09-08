@@ -50,3 +50,11 @@ labs(title = "population density in different counties", x = "population density
 The distribution has a right skewed tail.
 
 There seems to be a few counties with an extremely high population density at around 60000 and 90000. These are outliers, they are far away from most of the data and outside of the curve.
+
+2.  Create a scatterplot of the percentage of people with a college degree versus percentage below poverty
+
+    ```{r}
+    ggplot(midwest, aes(x=percollege, y=percbelowpoverty, color=state))+
+      geom_point()+
+      labs(title="% of people in college vs % of people below poverty line", x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
+    ```
