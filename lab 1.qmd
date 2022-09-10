@@ -42,7 +42,7 @@ There seems to be a few counties with an extremely high population density at ar
 
 3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
 
-The scatter plot does not highlight a clear relationship between the data. However,t the curve most data follow seems to be pointing downward and to the right, showing a negative relationship between the data: the higher the percentage of people with a college degree, the lower the percentage of poeple below the poverty line. It l
+The scatter plot does not highlight a clear relationship between the data. However,t the curve most data follow seems to be pointing downward and to the right, showing a negative relationship between the data: the higher the percentage of people with a college degree, the lower the percentage of people below the poverty line. The states of Illinois, Michigan and Ohio, seem to have the largest percentages of people below the poverty line, even with high percentages of people with a college degree
 
 4.  Looking at the relationship between the number of poeple with a college degree and the number of poeple below the poverty line by state.
 
@@ -60,6 +60,8 @@ The scatter plot does not highlight a clear relationship between the data. Howev
 
     Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
 
+    I prefer the plot in exercise 4 to the one in exercise 2 because the differences between the states are much clearer, and adding the trend line allows for a better reading of the plot. Also because even with different colors, in exercise 2 the plot didn't show clearly the states, because the points were on top of each other.
+
 5.  Looking at the difference in area between states.
 
     ```{r}
@@ -70,7 +72,11 @@ The scatter plot does not highlight a clear relationship between the data. Howev
 
 -   Describe what you observe from the plot.
 
+    This plot shows the distribution of the areas of counties in different states. Each boxplot highlights the median, interquartile range, upper and lower extremes and the outliers.
+
 -   Which state has the single largest county? How do you know based on the plot?
+
+    Michigan seems to have the largest county, because one of its outliers shows an area much larger than all the other counties. This can be seen because the point is to the right of all the other points.
 
 6.  Exploring whether most counties in the chosen states are located in a metropolitan area or not
 
@@ -87,7 +93,8 @@ ggplot(midwest, aes(x=state, fill= metro))+
   labs(fill= "Is it \n located in a \n metropolitan \n area?")
 ```
 
-7.  Looking at whether people with a college degree tend to live in denser areas
+7.  From the plot above we can see that most of the counties are located in metropolitan areas. The distinction is based on the color of the bars. The color orange identifies counties that are in metropolitan areas and all bars are predominantly orange. We can also see the number of counties per each state based on the count. The one with the largest amount is Illinois.
+8.  Looking at whether people with a college degree tend to live in denser areas
 
 ```{r}
 #reproducing the scatter diagram
