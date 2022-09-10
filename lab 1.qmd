@@ -38,11 +38,14 @@ versus percentage below poverty
     ```{r}
     ggplot(midwest, aes(x=percollege, y=percbelowpoverty, color=state))+
       geom_point()+
-      labs(title="% of people in college vs % of people below poverty line",
-           x= "% of people in college", y= "% of people below poverty line") + scale_colour_viridis_d()
+      labs(title="% of people with a college degree vs % of people below poverty line",
+           x= "% of people with a college degree", y= "% of people below poverty line") + scale_colour_viridis_d()
     ```
 
 3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
+
+The scatterplot does not highlight a clar relationship between the data. 
+However,t the curve most data follow seems to be pointing downards and to the right, showing a negative relationship between the data: as peop
 
 4.  Looking at the relationship between the number of poeple with a college 
 degree and the number of poeple below the poverty line by state. 
