@@ -29,11 +29,9 @@ labs(title = "Population density in different counties",
 
 The distribution has a right skewed tail.
 
-There seems to be a few counties with an extremely high population density at around 60000 and 90000. These are outliers, they are far away from most of 
-the data and outside of the curve.
+There seems to be a few counties with an extremely high population density at around 60000 and 90000. These are outliers, they are far away from most of the data and outside of the curve.
 
-2.  Create a scatterplot of the percentage of people with a college degree 
-versus percentage below poverty
+2.  Create a scatterplot of the percentage of people with a college degree versus percentage below poverty
 
     ```{r}
     ggplot(midwest, aes(x=percollege, y=percbelowpoverty, color=state))+
@@ -44,11 +42,9 @@ versus percentage below poverty
 
 3.  Describe what you observe in the plot from the previous exercise. In your description, include similarities and differences in the patterns across states.
 
-The scatterplot does not highlight a clar relationship between the data. 
-However,t the curve most data follow seems to be pointing downards and to the right, showing a negative relationship between the data: as peop
+The scatter plot does not highlight a clear relationship between the data. However,t the curve most data follow seems to be pointing downward and to the right, showing a negative relationship between the data: the higher the percentage of people with a college degree, the lower the percentage of poeple below the poverty line. It l
 
-4.  Looking at the relationship between the number of poeple with a college 
-degree and the number of poeple below the poverty line by state. 
+4.  Looking at the relationship between the number of poeple with a college degree and the number of poeple below the poverty line by state.
 
     ```{r}
     #plotting data on a scatter plot, diving grids based on the state
@@ -61,7 +57,8 @@ degree and the number of poeple below the poverty line by state.
            y= "% of people below poverty line") + scale_colour_viridis_d()
     #color black for the lines makes the line more visible 
     ```
-Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
+
+    Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your choice.
 
 5.  Looking at the difference in area between states.
 
@@ -73,8 +70,7 @@ Which plot do you prefer - this plot or the plot in Ex 2? Briefly explain your c
 
 -   Describe what you observe from the plot.
 
--   Which state has the single largest county? How do you know based on the
-plot?
+-   Which state has the single largest county? How do you know based on the plot?
 
 6.  Exploring whether most counties in the chosen states are located in a metropolitan area or not
 
@@ -84,14 +80,14 @@ midwest <- midwest |>
   mutate(metro = if_else(inmetro == 1, "Yes", "No"))
 ```
 
-
 ```{r}
 #creating a segmented bar chart for the data 
 ggplot(midwest, aes(x=state, fill= metro))+
   geom_bar()+
   labs(fill= "Is it \n located in a \n metropolitan \n area?")
 ```
-7. Looking at whether people with a college degree tend to live in denser areas 
+
+7.  Looking at whether people with a college degree tend to live in denser areas
 
 ```{r}
 #reproducing the scatter diagram
@@ -100,4 +96,3 @@ ggplot(midwest, aes(x=state, fill= metro))+
        facet_wrap(~state) +
       labs(title="Do people with college degrees tend to live in denser areas?", x= "% college educated", y= "Population density (person/unit area)", color = "% below \n poeverty line")
 ```
-
